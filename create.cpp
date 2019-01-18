@@ -12,10 +12,10 @@ using namespace std;
 
 void create() {
 
-    const int minLines = 512;
-    const int maxLines = 1024;
-    const double minDouble = 50.000;
-    const double maxDouble = 90.000;
+    const int minLines = 512; //minimum line count
+    const int maxLines = 1024; //maximum line count
+    const double minDouble = 50000; //smallest double is 50.000
+    const double maxDouble = 90000; //largest double is 90.000
 
     //Create and open file for writing
     ofstream fOut;
@@ -31,6 +31,8 @@ void create() {
 
     for(int i; i <= numLines; i++) {
         double randDouble = doubleDistribution(generator);
-        fOut << i << setw(10) << fixed << setprecision(3) << randDouble << endl;
+        double randDecimal = randDouble / 1000;
+        fOut << i << setw(10) << fixed << setprecision(3) << randDecimal << endl;
     }
+    fOut.close();
 }
