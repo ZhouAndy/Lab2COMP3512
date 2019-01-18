@@ -1,6 +1,7 @@
 #include <iostream>
+#include "create.hpp"
 
 int main() {
-    std::cout << "Hello, World from Andy Zhou" << std::endl;
+    create();
     return 0;
 }
